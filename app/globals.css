@@ -129,6 +129,32 @@
   }
 }
 
+/* Hero-Split: dezente Bewegung auf der Dach-Haelfte. Die Ziegel drift-en
+   langsam nach unten wie Regen, der Sweep zieht einen weichen Lichtstreifen
+   ueber die Kachelung. Bei prefers-reduced-motion beides aus. */
+@keyframes heroRoofDrift {
+  from { background-position: 0 0; }
+  to { background-position: 0 26px; }
+}
+@keyframes heroSweep {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(160%); }
+}
+.hero-roof-tiles {
+  animation: heroRoofDrift 22s linear infinite;
+}
+.hero-sweep {
+  background: linear-gradient(100deg, transparent 40%, rgba(247, 246, 242, 0.16) 50%, transparent 60%);
+  animation: heroSweep 11s ease-in-out infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-roof-tiles,
+  .hero-sweep {
+    animation: none;
+  }
+}
+
 /* Leaflet sits in a rounded-4xl (2rem) container, so its bottom-right controls
    need to clear the corner radius to stay fully legible. The attribution is a
    licence requirement, not decoration. */
