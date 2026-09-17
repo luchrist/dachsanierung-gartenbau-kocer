@@ -1,0 +1,74 @@
+[
+  {
+    "originalFile": "scraped-01.jpg",
+    "file": "photos/_skipped/gebaudewand-mit-regenrinne-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Gebäudewand mit Regenrinne",
+    "subjectSlug": "gebaudewand-mit-regenrinne",
+    "description": "Das Foto zeigt die Seitenwand eines Gebäudes mit einer Regenrinne, die in ein Abflussgitter mündet, und einem gepflasterten Boden."
+  },
+  {
+    "originalFile": "scraped-02.jpg",
+    "file": "photos/_skipped/gebaudewand-mit-rohr-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Gebäudewand mit Rohr",
+    "subjectSlug": "gebaudewand-mit-rohr",
+    "description": "Eine detaillierte Ansicht der Metallfassade eines Gebäudes mit einem vertikalen Rohr und einer Leuchte."
+  },
+  {
+    "originalFile": "scraped-03.jpg",
+    "file": "photos/_skipped/garten-mit-terrasse-und-schaukel-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Garten mit Terrasse und Schaukel",
+    "subjectSlug": "garten-mit-terrasse-und-schaukel",
+    "description": "Ein sonniger Garten mit einer gepflasterten Terrasse, einem Rasenstück und einer Holzschaukel."
+  },
+  {
+    "originalFile": "scraped-04.jpg",
+    "file": "photos/_skipped/geschaftsgebaude-auenansicht-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Geschäftsgebäude-Außenansicht",
+    "subjectSlug": "geschaftsgebaude-auenansicht",
+    "description": "Außenansicht eines modernen Geschäftsgebäudes mit blauen Akzenten und einem 'BS'-Logo auf dem Fenster."
+  },
+  {
+    "originalFile": "api-01.jpg",
+    "file": "photos/_skipped/gebaudeauenwand-und-regenrinne-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Gebäudeaußenwand und Regenrinne",
+    "subjectSlug": "gebaudeauenwand-und-regenrinne",
+    "description": "Das Foto zeigt die Außenwand eines Gebäudes mit einer Regenrinne, die in einen Bodenablauf mündet, und einem gepflasterten Bereich."
+  },
+  {
+    "originalFile": "api-02.jpg",
+    "file": "photos/_skipped/gebaudefassade-mit-fallrohr-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Gebäudefassade mit Fallrohr",
+    "subjectSlug": "gebaudefassade-mit-fallrohr",
+    "description": "Eine Gebäudefassade aus Wellblech mit einem Fallrohr und Lichtern unter dem Dach."
+  },
+  {
+    "originalFile": "api-03.jpg",
+    "file": "photos/_skipped/hinterhof-mit-garten-und-schaukel-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Hinterhof mit Garten und Schaukel",
+    "subjectSlug": "hinterhof-mit-garten-und-schaukel",
+    "description": "Ein sonniger Hinterhof mit einer gepflasterten Terrasse, einem Rasen, einer Schaukel und einem Blumenbeet."
+  },
+  {
+    "originalFile": "api-04.jpg",
+    "file": "photos/_skipped/gebaudeauenansicht-mit-logo-01.jpg",
+    "category": "skip",
+    "quality": "high",
+    "subject": "Gebäudeaußenansicht mit Logo",
+    "subjectSlug": "gebaudeauenansicht-mit-logo",
+    "description": "Die Außenansicht eines modernen Gebäudes mit einem blauen 'BS'-Logo an der Fensterfront und einem orangefarbenen Pfahl davor."
+  }
+]
