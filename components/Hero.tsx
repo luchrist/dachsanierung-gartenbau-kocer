@@ -124,9 +124,52 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/25" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-ink/70 to-transparent" />
 
+      {/* Dach-Band ueber dem Garten-Video: eine gemauerte Ziegelkante am oberen
+          Rand, damit der Hintergrund nicht mehr rein als Gartenbau liest.
+          Ziegel als kachelbares SVG, damit sie auf jedem Viewport gleich gross
+          bleiben. Mask-image blendet das Band zum Video hin sanft aus. */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-[11] h-[96px] sm:h-[120px] md:h-[150px]"
+        aria-hidden="true"
+        style={{
+          backgroundColor: "#B8371F",
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='26' viewBox='0 0 44 26'><path d='M0 26 Q11 4 22 26 Q33 4 44 26 Z' fill='%23B8371F'/><path d='M0 26 Q11 4 22 26 Q33 4 44 26' stroke='%234E170C' stroke-width='0.9' fill='none' opacity='0.7'/></svg>\")",
+          backgroundRepeat: "repeat",
+          backgroundSize: "44px 26px",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)",
+          maskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)",
+        }}
+      />
+      {/* Dunkler Verlauf ueber dem Ziegelband, damit die Navbar-Schrift
+          (bone auf transparentem Zustand) lesbar bleibt. */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[12] h-[96px] bg-gradient-to-b from-ink/55 via-ink/25 to-transparent sm:h-[120px] md:h-[150px]" aria-hidden="true" />
+
       <div className="relative z-20 flex h-full items-end">
         <div className="mx-auto w-full max-w-[1400px] px-6 pb-16 md:px-10 md:pb-24 lg:px-14">
           <div className="max-w-2xl">
+            {/* Zwei Pillars gleich sichtbar: Dach (erde/rot) und Garten (laub/gruen).
+                Der Hintergrund zeigt nur Garten, also nehmen die Chips den Dach-Teil
+                visuell mit rein. */}
+            <div className="mb-5 flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-erde-300/60 bg-erde-500/85 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-bone shadow-sm backdrop-blur-sm sm:text-[13px]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                  <path d="M3 12 12 4l9 8" />
+                  <path d="M5 10v10h14V10" />
+                </svg>
+                Dachsanierung
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-laub-300/60 bg-laub-500/85 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-bone shadow-sm backdrop-blur-sm sm:text-[13px]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                  <path d="M12 21c5-2 8-6 8-12V5h-4c-6 0-10 3-12 8" />
+                  <path d="M4 21c1-6 4-9 9-11" />
+                </svg>
+                Gartenbau
+              </span>
+            </div>
+
             <h1 className="font-display text-[36px] leading-[0.98] tracking-tight text-bone drop-shadow-lg sm:text-[46px] md:text-[62px] lg:text-[74px]">
               {galabau.claim}
             </h1>
