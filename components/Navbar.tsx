@@ -47,12 +47,22 @@ export function Navbar() {
           solid ? "bg-ink/10 opacity-100" : "opacity-0"
         }`}
       />
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:px-10 md:py-4">
+      {/* Padding und Logo-Groesse schrumpfen sanft, wenn der Header solide wird —
+          transparent gibt dem Logo Raum wie in der Kocer-Vorlage, solid haelt
+          die Header-Hoehe knapp am Logo, damit keine leere Flaeche unter dem
+          Logo mitscrollt. */}
+      <nav
+        className={`mx-auto flex max-w-[1400px] items-center justify-between px-6 transition-all duration-500 md:px-10 ${
+          solid ? "py-1.5 md:py-2" : "py-3 md:py-4"
+        }`}
+      >
         <a href="/" className="flex items-center">
           <img
             src="/assets/logo-mark.png"
             alt={`${company.name} Logo`}
-            className="h-16 w-auto object-contain transition-all duration-500 md:h-24"
+            className={`w-auto object-contain transition-all duration-500 ${
+              solid ? "h-12 md:h-16" : "h-14 md:h-20"
+            }`}
           />
         </a>
 
