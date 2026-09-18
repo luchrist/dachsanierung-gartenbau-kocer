@@ -18,8 +18,8 @@ export function TradeSections() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <SectionHead
             eyebrow={active.label}
-            title="Leistungen im Ueberblick"
-            text="Was Sie bei uns fuer dieses Gewerk erwarten koennen."
+            title="Leistungen im Überblick"
+            text="Was Sie bei uns für dieses Gewerk erwarten können."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {active.services.map((s) => (
@@ -40,7 +40,6 @@ export function TradeSections() {
 
       <CrossTeaser
         text={`Interessiert an ${other.label}?`}
-        subline="Ein Klick — die ganze Seite dreht sich."
         cta={`Mehr zu ${other.label}`}
         onClick={() => setActive(other.key)}
         color={other.accent.bg}
@@ -51,7 +50,7 @@ export function TradeSections() {
           <SectionHead
             eyebrow="Referenzen"
             title={`Zuletzt umgesetzt: ${active.label}`}
-            text="Drei Projekte, an denen sich unser Anspruch ablesen laesst."
+            text="Drei Projekte, an denen sich unser Anspruch ablesen lässt."
             invert
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -90,7 +89,7 @@ export function TradeSections() {
           <SectionHead
             eyebrow="Ablauf"
             title="So arbeiten wir"
-            text="Klare Schritte, ein Ansprechpartner, keine Ueberraschungen."
+            text="Klare Schritte, ein Ansprechpartner, keine Überraschungen."
           />
           <ol className="mt-14 grid gap-6 md:grid-cols-3">
             {active.ablauf.map((step, i) => (
@@ -141,7 +140,6 @@ export function TradeSections() {
 
       <CrossTeaser
         text={`Vielleicht doch eher ${other.label}?`}
-        subline="Sie koennen die ganze Seite mit einem Klick umschalten."
         cta={`Zu ${other.label} wechseln`}
         onClick={() => setActive(other.key)}
         color={other.accent.bg}
@@ -190,13 +188,11 @@ function SectionHead({
 
 function CrossTeaser({
   text,
-  subline,
   cta,
   onClick,
   color,
 }: {
   text: string;
-  subline: string;
   cta: string;
   onClick: () => void;
   color: string;
@@ -209,12 +205,9 @@ function CrossTeaser({
         style={{ mixBlendMode: "screen" }}
       />
       <div className="relative mx-auto flex max-w-[1400px] flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between md:px-10">
-        <div>
-          <h2 className="font-display text-[30px] leading-tight tracking-tight md:text-[42px]">
-            {text}
-          </h2>
-          <p className="mt-2 text-[15px] text-bone/75 md:text-[17px]">{subline}</p>
-        </div>
+        <h2 className="font-display text-[30px] leading-tight tracking-tight md:text-[42px]">
+          {text}
+        </h2>
         <button
           type="button"
           onClick={onClick}

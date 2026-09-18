@@ -2,23 +2,23 @@
 
 import { useEffect, useRef } from "react";
 
+import { galabau } from "@/lib/galabau";
 import { trades, type Trade } from "@/lib/trades";
 import { useTrade } from "@/components/TradeContext";
 
 /**
  * Split-Hero fuer Multi-Gewerk-Handwerker.
  *
- * Ablauf:
- * 1. Ohne Auswahl: Bildschirm halbiert, links Gewerk A, rechts Gewerk B, in
- *    der Mitte ein Prompt "Was interessiert Sie?" mit zwei Buttons.
- * 2. Klick auf ein Panel oder auf einen Button lockt die Auswahl. Das gewaehlte
- *    Panel expandiert auf volle Breite, das andere weicht seitwaerts. Der Trick
- *    fuer den "kein Rescale" Effekt: die Hero-Bilder liegen absolut mit voller
- *    Viewport-Breite im Panel und sind an einer Kante verankert. Waechst das
- *    Panel, wandert nur der overflow-hidden-Rand nach aussen, das sichtbare
- *    Bild bleibt an seiner Position.
- * 3. Scrollt der Nutzer ohne Auswahl bis zur Haelfte des Heros, lockt sich das
- *    linke Gewerk als Default.
+ * Vor der Auswahl: zwei halbe Bildpanels als Hintergrund, darueber der
+ * klassische Hero-Text der Marke und ein Prompt "Was interessiert Sie?" mit
+ * zwei Buttons.
+ *
+ * Nach der Auswahl: das gewaehlte Panel expandiert auf volle Breite. Bilder
+ * sind absolut mit 100vw Breite an der Aussenkante verankert — der sichtbare
+ * Ausschnitt bleibt konstant, nur der overflow-hidden-Rand wandert.
+ *
+ * Ohne Klick: sobald der Nutzer bis unter die Haelfte des Heros scrollt, wird
+ * das erste Gewerk als Default gelockt.
  */
 export function SplitHero() {
   const { active, setActive, locked, lock } = useTrade();
@@ -30,11 +30,7 @@ export function SplitHero() {
     if (!el) return;
     const onScroll = () => {
       const rect = el.getBoundingClientRect();
-      // Sichtbarer Rest oben: rect.bottom relativ zur Fensterhoehe. Wenn nur
-      // noch die Haelfte des Heros im Viewport ist, greift der Default.
-      if (rect.bottom < window.innerHeight * 0.5) {
-        lock();
-      }
+      if (rect.bottom < window.innerHeight * 0.5) lock();
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -46,7 +42,7 @@ export function SplitHero() {
   return (
     <section
       ref={heroRef}
-      className="relative isolate h-[100dvh] min-h-[560px] w-full overflow-hidden bg-ink"
+      className="relative isolate h-[100dvh] min-h-[620px] w-full overflow-hidden bg-ink"
     >
       <TradePanel
         side="left"
@@ -63,50 +59,43 @@ export function SplitHero() {
         onSelect={() => setActive(right.key)}
       />
 
-      {/* Trenner in der Mitte, faded weg wenn Auswahl getroffen. */}
+      {/* Trenner in der Mitte, verschwindet nach der Auswahl. */}
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-y-0 left-1/2 z-20 w-px -translate-x-1/2 bg-bone/40 transition-opacity duration-700 ${
+        className={`pointer-events-none absolute inset-y-0 left-1/2 z-20 w-px -translate-x-1/2 bg-bone/35 transition-opacity duration-700 ${
           locked ? "opacity-0" : "opacity-100"
         }`}
       />
 
-      {/* Zentraler Prompt: nur vor der Auswahl. */}
+      {/* Hero-Text + Auswahl vor der Entscheidung. */}
       <div
         className={`pointer-events-none absolute inset-0 z-30 flex items-center justify-center px-6 transition-opacity duration-500 ${
           locked ? "opacity-0" : "opacity-100"
         }`}
       >
-        <div className="pointer-events-auto max-w-[560px] text-center">
-          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-bone/75">
-            Zwei Gewerke, ein Team
-          </p>
-          <h1 className="mt-4 font-display text-[34px] leading-[1] tracking-tight text-bone drop-shadow-lg sm:text-[46px] md:text-[58px]">
-            Was interessiert Sie?
+        <div className="pointer-events-auto w-full max-w-[900px] text-center">
+          <h1 className="font-display text-[40px] leading-[0.98] tracking-tight text-bone drop-shadow-xl sm:text-[56px] md:text-[76px] lg:text-[92px]">
+            {galabau.claim}
           </h1>
-          <p className="mt-4 text-[14px] leading-relaxed text-bone/85 drop-shadow md:text-[15px]">
-            Waehlen Sie ein Gewerk — Sie sehen dann eine Website, die nur davon
-            handelt. Wechseln koennen Sie jederzeit.
+          <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.28em] text-bone/70">
+            Was interessiert Sie?
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
             <button
               type="button"
               onClick={() => setActive(left.key)}
-              className={`inline-flex items-center justify-center rounded-full border border-bone/60 bg-bone/10 px-7 py-4 text-[13px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/20 active:scale-[0.98]`}
+              className="inline-flex items-center justify-center rounded-full border border-bone/70 bg-bone/10 px-8 py-4 text-[14px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98]"
             >
               {left.label}
             </button>
             <button
               type="button"
               onClick={() => setActive(right.key)}
-              className={`inline-flex items-center justify-center rounded-full border border-bone/60 bg-bone/10 px-7 py-4 text-[13px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/20 active:scale-[0.98]`}
+              className="inline-flex items-center justify-center rounded-full border border-bone/70 bg-bone/10 px-8 py-4 text-[14px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98]"
             >
               {right.label}
             </button>
           </div>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-bone/55">
-            Kein Klick? Weiterscrollen — wir zeigen dann {left.label}.
-          </p>
         </div>
       </div>
     </section>
@@ -126,14 +115,13 @@ function TradePanel({
   locked: boolean;
   onSelect: () => void;
 }) {
-  // Breite: initial 50%, im gelockten Zustand 100% (aktiv) bzw. 0 (inaktiv).
   const width = !locked ? "50%" : active ? "100%" : "0%";
   const zIndex = active ? 10 : 5;
 
   return (
     <button
       type="button"
-      aria-label={`${trade.label} auswaehlen`}
+      aria-label={`${trade.label} auswählen`}
       onClick={onSelect}
       className="absolute inset-y-0 overflow-hidden text-left transition-[width] duration-[900ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
       style={{
@@ -145,9 +133,7 @@ function TradePanel({
       }}
       disabled={locked && !active}
     >
-      {/* Bild-Container: fest 100vw breit, an der Aussenkante verankert.
-          Waechst das Panel, verschiebt sich nichts im Bild — die andere
-          Bildhaelfte wird nur aus dem overflow-hidden Bereich freigegeben. */}
+      {/* Bild fest 100vw, an der Aussenkante verankert. */}
       <div
         className="absolute inset-y-0"
         style={{
@@ -162,14 +148,9 @@ function TradePanel({
           aria-hidden
           className="h-full w-full object-cover"
           onError={(e) => {
-            // Fallback: falls das Hero-Bild fehlt, greift ein sanfter
-            // Farbverlauf, damit die Website nicht mit einer leeren Flaeche
-            // aufmacht.
-            const img = e.currentTarget;
-            img.style.display = "none";
+            e.currentTarget.style.display = "none";
           }}
         />
-        {/* Sanfter Ink-Overlay fuer Lesbarkeit. */}
         <div
           aria-hidden
           className={`absolute inset-0 bg-gradient-to-b from-ink/25 via-ink/45 to-ink/80 transition-opacity duration-700 ${
@@ -178,21 +159,7 @@ function TradePanel({
         />
       </div>
 
-      {/* Panel-Label — sichtbar solange noch nicht gewaehlt. */}
-      <div
-        className={`pointer-events-none absolute inset-x-0 top-[18%] px-8 text-center transition-opacity duration-500 md:top-[22%] ${
-          locked ? "opacity-0" : "opacity-100"
-        }`}
-      >
-        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-bone/70">
-          {side === "left" ? "Links" : "Rechts"}
-        </p>
-        <p className="mt-3 font-display text-[26px] leading-tight tracking-tight text-bone drop-shadow-md md:text-[38px]">
-          {trade.splitClaim}
-        </p>
-      </div>
-
-      {/* Content nach der Auswahl. */}
+      {/* Content nach Auswahl. */}
       <div
         className={`pointer-events-none absolute inset-0 z-10 flex items-end transition-opacity delay-300 duration-700 ${
           active && locked ? "opacity-100" : "opacity-0"

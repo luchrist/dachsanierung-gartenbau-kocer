@@ -47,22 +47,22 @@ export function Navbar() {
           solid ? "bg-ink/10 opacity-100" : "opacity-0"
         }`}
       />
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-[2px] md:px-10">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:px-10 md:py-4">
         <a href="/" className="flex items-center">
           <img
             src="/assets/logo-mark.png"
             alt={`${company.name} Logo`}
-            className="h-10 w-auto object-contain transition-all duration-500 md:h-12"
+            className="h-16 w-auto object-contain transition-all duration-500 md:h-24"
           />
         </a>
 
-        <div className="hidden items-center gap-9 lg:flex">
+        <div className="hidden items-center gap-10 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`group relative font-mono text-[11px] uppercase tracking-[0.22em] transition-colors duration-500 ${
-                solid ? "text-ink/65 hover:text-ink" : "text-bone/75 hover:text-bone"
+              className={`group relative font-mono text-[13px] uppercase tracking-[0.22em] transition-colors duration-500 ${
+                solid ? "text-ink/70 hover:text-ink" : "text-bone/80 hover:text-bone"
               }`}
             >
               {link.label}
@@ -74,7 +74,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="/projekt-anfragen"
-            className={`group relative hidden overflow-hidden rounded-full border px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.22em] transition-all duration-500 active:scale-[0.98] sm:inline-flex sm:items-center sm:gap-3 ${
+            className={`group relative hidden overflow-hidden rounded-full border px-6 py-3 font-mono text-[13px] uppercase tracking-[0.22em] transition-all duration-500 active:scale-[0.98] sm:inline-flex sm:items-center sm:gap-3 ${
               solid ? "border-ink text-ink" : "border-bone/50 text-bone"
             }`}
           >

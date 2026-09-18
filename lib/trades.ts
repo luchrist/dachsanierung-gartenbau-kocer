@@ -1,6 +1,6 @@
 // Multi-Handwerk-Template: zwei (oder mehr) Gewerke in einer Website.
 // Jedes Gewerk liefert alle Content-Slots, die die Homepage-Sektionen
-// pro Auswahl anzeigen. Der TradeContext haelt, welches gerade aktiv ist.
+// pro Auswahl anzeigen. Der TradeContext hält, welches gerade aktiv ist.
 
 export type TradeKey = string;
 
@@ -57,38 +57,38 @@ export const trades: Trade[] = [
     splitClaim: "Dachsanierung.",
     expandedClaim: "Wir machen’s dicht.",
     expandedSubline:
-      "Das Dach gehört zu den am staerksten beanspruchten Bauteilen ueberhaupt. Ob Neubau oder Sanierung, Steildach oder Flachdach — wir planen und arbeiten so, dass Sie viele Jahre trocken darunter wohnen.",
-    splitBullets: ["Bedachungen", "Daemmung", "Klempnerarbeiten"],
+      "Das Dach gehört zu den am stärksten beanspruchten Bauteilen überhaupt. Ob Neubau oder Sanierung, Steildach oder Flachdach — wir planen und arbeiten so, dass Sie viele Jahre trocken darunter wohnen.",
+    splitBullets: ["Bedachungen", "Dämmung", "Klempnerarbeiten"],
     services: [
       {
         title: "Bedachungen",
         text:
-          "Flachdach- und Steildachsanierung, Erstellung und Sanierung von Metalldaechern — mit sauberem Unterbau und dauerhafter Regensicherheit.",
+          "Flachdach- und Steildachsanierung, Erstellung und Sanierung von Metalldächern — mit sauberem Unterbau und dauerhafter Regensicherheit.",
       },
       {
         title: "Dachfenster",
         text:
-          "Dachfenster in allen Groessen, sauber eingebaut und dicht angeschlossen. Ein Leben voller Lichtblicke — funktional wie stimmungsvoll.",
+          "Dachfenster in allen Größen, sauber eingebaut und dicht angeschlossen. Ein Leben voller Lichtblicke — funktional wie stimmungsvoll.",
       },
       {
-        title: "Dachdaemmung",
+        title: "Dachdämmung",
         text:
-          "Aufsparren-, Zwischensparren- oder Untersparrendaemmung, je nach Konstruktion und Nutzung. Auch als Daemmung der obersten Geschossdecke.",
+          "Aufsparren-, Zwischensparren- oder Untersparrendämmung, je nach Konstruktion und Nutzung. Auch als Dämmung der obersten Geschossdecke.",
       },
       {
         title: "Schornsteinverkleidung",
         text:
-          "Ob Zink, Kupfer oder Schiefer — Verkleidung eines maroden Schornsteins, bevor teure Neuaufbauten noetig werden.",
+          "Ob Zink, Kupfer oder Schiefer — Verkleidung eines maroden Schornsteins, bevor teure Neuaufbauten nötig werden.",
       },
       {
         title: "Klempner- & Spenglerarbeiten",
         text:
-          "First, Traufe, Ortgang, Dachrinnen und Fallrohre. Wir kuemmern uns um alle Details fuer ein witterungsbestaendiges Dach.",
+          "First, Traufe, Ortgang, Dachrinnen und Fallrohre. Wir kümmern uns um alle Details für ein witterungsbeständiges Dach.",
       },
       {
         title: "Dachreparaturen",
         text:
-          "Reparaturen aller Art, Reinigung von Dachrinnen, Fallrohren und Vordaechern — damit Sie sicher unter Ihrem Dach wohnen.",
+          "Reparaturen aller Art, Reinigung von Dachrinnen, Fallrohren und Vordächern — damit Sie sicher unter Ihrem Dach wohnen.",
       },
     ],
     references: [
@@ -100,7 +100,7 @@ export const trades: Trade[] = [
       },
       {
         title: "Walmdach saniert",
-        location: "Buerstadt",
+        location: "Bürstadt",
         image: "/assets/kocer/walmdach1.webp",
         scope: "Sanierung eines Walmdachs inklusive First- und Ortgangdetails.",
       },
@@ -116,19 +116,19 @@ export const trades: Trade[] = [
         name: "Familie K.",
         place: "Lampertheim",
         text:
-          "Zwei Wochen, alles trocken, sauber, wie besprochen. Von der ersten Beratung bis zur Uebergabe hat alles gepasst.",
+          "Zwei Wochen, alles trocken, sauber, wie besprochen. Von der ersten Beratung bis zur Übergabe hat alles gepasst.",
       },
       {
         name: "Hausverwaltung M.",
         place: "Worms",
         text:
-          "Dachsanierung im laufenden Betrieb ohne Zwischenfaelle. Die Kommunikation war klar, die Baustelle jeden Abend besenrein.",
+          "Dachsanierung im laufenden Betrieb ohne Zwischenfälle. Die Kommunikation war klar, die Baustelle jeden Abend besenrein.",
       },
     ],
     ablauf: [
-      { title: "Termin vor Ort", text: "Aufmass, Zustandspruefung und Klaerung von Details wie Anschluessen und Statik." },
-      { title: "Angebot", text: "Nachvollziehbare Positionen, klare Bauzeit, keine Ueberraschungen." },
-      { title: "Ausfuehrung", text: "Ein Ansprechpartner, feste Baucrew, saubere Uebergabe." },
+      { title: "Termin vor Ort", text: "Aufmaß, Zustandsprüfung und Klärung von Details wie Anschlüssen und Statik." },
+      { title: "Angebot", text: "Nachvollziehbare Positionen, klare Bauzeit, keine Überraschungen." },
+      { title: "Ausführung", text: "Ein Ansprechpartner, feste Baucrew, saubere Übergabe." },
     ],
     careerRoles: [
       "Dachdecker/in (m/w/d)",
@@ -146,42 +146,42 @@ export const trades: Trade[] = [
       text: "text-[#3f6b2a]",
       border: "border-[#3f6b2a]",
     },
-    heroImage: "/assets/kocer/gartenanlage1.webp",
+    heroImage: "/assets/kocer/garten-hero.webp",
     splitClaim: "Gartenbau.",
-    expandedClaim: "Idyllische Gaerten, mit Verstand angelegt.",
+    expandedClaim: "Idyllische Gärten, mit Verstand angelegt.",
     expandedSubline:
-      "Pflasterung, Terrasse, Vorgarten, Pflege und Baumarbeiten aus einer Hand. Wir gestalten Gaerten so, dass Details noch nach zehn Jahren sitzen — und begleiten sie mit fachgerechter Pflege.",
+      "Pflasterung, Terrasse, Vorgarten, Pflege und Baumarbeiten aus einer Hand. Wir gestalten Gärten so, dass Details noch nach zehn Jahren sitzen — und begleiten sie mit fachgerechter Pflege.",
     splitBullets: ["Gartenpflege", "Pflaster & Terrasse", "Naturstein"],
     services: [
       {
         title: "Gartenpflege",
         text:
-          "Rasenpflege, Baum- und Gehoelzschnitt, Teichreinigung, Jahrespflege — fachgerecht und der Jahreszeit entsprechend.",
+          "Rasenpflege, Baum- und Gehölzschnitt, Teichreinigung, Jahrespflege — fachgerecht und der Jahreszeit entsprechend.",
       },
       {
         title: "Pflasterungen",
         text:
-          "Wege, Auffahrten und Hofflaechen mit dem passenden Material und fachgerechtem Unterbau.",
+          "Wege, Auffahrten und Hofflächen mit dem passenden Material und fachgerechtem Unterbau.",
       },
       {
-        title: "Vorgaerten",
+        title: "Vorgärten",
         text:
-          "Das Aushaengeschild jedes Hauses — schoen gestaltet und bepflanzt fuer einen einladenden Empfang.",
+          "Das Aushängeschild jedes Hauses — schön gestaltet und bepflanzt für einen einladenden Empfang.",
       },
       {
         title: "Natursteinarbeiten",
         text:
-          "Natuerliche Aesthetik im Garten: Trockenmauern, Findlinge, Treppenstufen, L-Steine.",
+          "Natürliche Ästhetik im Garten: Trockenmauern, Findlinge, Treppenstufen, L-Steine.",
       },
       {
         title: "Terrassen",
         text:
-          "Terrassen aus Hartholz oder hochwertigen Terrassenplatten — der ideale Platz fuer entspannte Stunden im Gruenen.",
+          "Terrassen aus Hartholz oder hochwertigen Terrassenplatten — der ideale Platz für entspannte Stunden im Grünen.",
       },
       {
-        title: "Baumfaellungen & -pflege",
+        title: "Baumfällungen & -pflege",
         text:
-          "Faellungen schnell und sicher mit zertifizierter Seilklettertechnik. Baum- und Gehoelzschnitt, Verpflanzungen.",
+          "Fällungen schnell und sicher mit zertifizierter Seilklettertechnik. Baum- und Gehölzschnitt, Verpflanzungen.",
       },
     ],
     references: [
@@ -201,7 +201,7 @@ export const trades: Trade[] = [
         title: "Vorgarten mit Natursteinweg",
         location: "Bensheim",
         image: "/assets/kocer/vorgarten1.webp",
-        scope: "Naturstein-Wegeflaeche, Rasen und Staudenbeete am Hauseingang.",
+        scope: "Naturstein-Wegefläche, Rasen und Staudenbeete am Hauseingang.",
       },
     ],
     reviews: [
@@ -209,7 +209,7 @@ export const trades: Trade[] = [
         name: "Familie B.",
         place: "Lampertheim",
         text:
-          "Aus unserer alten Rasenflaeche ist ein Garten geworden, den wir jeden Abend nutzen. Sauber gearbeitet, faire Beratung.",
+          "Aus unserer alten Rasenfläche ist ein Garten geworden, den wir jeden Abend nutzen. Sauber gearbeitet, faire Beratung.",
       },
       {
         name: "S. G.",
@@ -219,12 +219,12 @@ export const trades: Trade[] = [
       },
     ],
     ablauf: [
-      { title: "Aufmass vor Ort", text: "Bestand, Boden, Gefaelle und Zugang klaeren." },
+      { title: "Aufmaß vor Ort", text: "Bestand, Boden, Gefälle und Zugang klären." },
       { title: "Planung & Angebot", text: "Varianten mit klaren Positionen statt einer Endsumme." },
-      { title: "Ausfuehrung", text: "Feste Bauzeit, ein Team, Pflegehinweise inklusive." },
+      { title: "Ausführung", text: "Feste Bauzeit, ein Team, Pflegehinweise inklusive." },
     ],
     careerRoles: [
-      "Landschaftsgaertner/in (m/w/d)",
+      "Landschaftsgärtner/in (m/w/d)",
       "Vorarbeiter/in GaLaBau",
       "Auszubildende/r Garten- & Landschaftsbau",
     ],
