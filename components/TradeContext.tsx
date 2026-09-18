@@ -11,6 +11,9 @@ type TradeContextValue = {
    *  gescrollt ist, dass wir den Default festschreiben. */
   locked: boolean;
   lock: () => void;
+  /** Wird beim Zurueckscrollen an den Hero-Anfang aufgerufen, damit der
+   *  Split-Auswahl-Overlay wieder erscheint. */
+  unlock: () => void;
 };
 
 const TradeContext = createContext<TradeContextValue | null>(null);
@@ -40,9 +43,13 @@ export function TradeProvider({ children }: { children: React.ReactNode }) {
     setLocked(true);
   }, []);
 
+  const unlock = useCallback(() => {
+    setLocked(false);
+  }, []);
+
   const value = useMemo<TradeContextValue>(
-    () => ({ active: findTrade(activeKey), setActive, locked, lock }),
-    [activeKey, setActive, locked, lock]
+    () => ({ active: findTrade(activeKey), setActive, locked, lock, unlock }),
+    [activeKey, setActive, locked, lock, unlock]
   );
 
   return <TradeContext.Provider value={value}>{children}</TradeContext.Provider>;

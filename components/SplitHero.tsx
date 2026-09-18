@@ -21,20 +21,30 @@ import { useTrade } from "@/components/TradeContext";
  * das erste Gewerk als Default gelockt.
  */
 export function SplitHero() {
-  const { active, setActive, locked, lock } = useTrade();
+  const { active, setActive, locked, lock, unlock } = useTrade();
   const heroRef = useRef<HTMLElement>(null);
 
+  // Scroll-Kopplung: Wer bis unter die Haelfte des Heros scrollt, lockt die
+  // Auswahl (Panel expandiert, Downstream-Sektionen greifen). Wer bis ganz an
+  // den Seitenanfang zurueckscrollt, unlockt sie wieder — dann geht das
+  // gewaehlte Panel als Reverse-Animation zurueck auf 50 % und der Prompt
+  // erscheint erneut. Der activeKey bleibt dabei stehen, das Panel muss also
+  // nicht neu ausgewaehlt werden, wenn man einfach wieder runterscrollt.
   useEffect(() => {
-    if (locked) return;
     const el = heroRef.current;
     if (!el) return;
     const onScroll = () => {
       const rect = el.getBoundingClientRect();
-      if (rect.bottom < window.innerHeight * 0.5) lock();
+      if (rect.bottom < window.innerHeight * 0.5) {
+        lock();
+      } else if (rect.top >= 0) {
+        unlock();
+      }
     };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [locked, lock]);
+  }, [lock, unlock]);
 
   const left = trades[0];
   const right = trades[1];
