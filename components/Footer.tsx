@@ -2,6 +2,7 @@ import { InstagramLogo, FacebookLogo, TiktokLogo } from "@phosphor-icons/react/d
 
 import company from "@/config/company";
 import { galabau } from "@/lib/galabau";
+import { trades } from "@/lib/trades";
 
 const socials = [
   { key: "instagram" as const, label: "Instagram", Icon: InstagramLogo },
@@ -19,7 +20,7 @@ export function Footer() {
             <img
               src="/assets/logo-mark.png"
               alt={`${company.name} Logo`}
-              className="h-20 w-20 object-contain md:h-28 md:w-28"
+              className="h-14 w-auto object-contain md:h-16"
             />
             <div className="max-w-[14ch] font-display text-[30px] leading-[1.02] tracking-tight text-ink md:text-[44px]">
               {company.shortName || company.name}
@@ -41,7 +42,16 @@ export function Footer() {
               <div className="mt-3 font-mono text-[12px] tracking-[0.05em] text-ink">{company.address.street}</div>
             </div>
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/45">Projekt</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/45">Gewerke</div>
+              {trades.map((t) => (
+                <a
+                  key={t.key}
+                  href={`/?trade=${t.key}#leistungen`}
+                  className="mt-2 block font-mono text-[12px] uppercase tracking-[0.16em] text-ink/70 hover:text-ink"
+                >
+                  {t.label}
+                </a>
+              ))}
               <a
                 href="/projekt-anfragen"
                 className="mt-3 block font-mono text-[12px] uppercase tracking-[0.16em] text-laub-600 hover:text-laub-800"

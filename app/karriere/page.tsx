@@ -5,16 +5,13 @@ import { Footer } from "@/components/Footer";
 import { RecruitingForm } from "@/components/RecruitingForm";
 import company from "@/config/company";
 import { galabau } from "@/lib/galabau";
+import { trades } from "@/lib/trades";
 
 export const metadata: Metadata = {
   title: `Karriere | ${company.name}`,
-  description: `Dachdecker, Klempner und Helfer im Handwerk bei ${company.name} in ${company.address.city}. Familienbetrieb, feste Teams. In 60 Sekunden bewerben, ohne Lebenslauf.`
+  description: `Jobs bei ${company.name} in ${company.address.city}. Mehrere Gewerke, ein Team.`
 };
 
-/**
- * Recruiting-Funnel aus Abschnitt 10 des Konzepts: ehrlicher Hero, Benefits,
- * 60-Sekunden-Bewerbung ohne Lebenslaufpflicht, WhatsApp-Option.
- */
 export default function KarrierePage() {
   return (
     <main style={{ overflowX: "clip" }} className="bg-bone">
@@ -50,6 +47,40 @@ export default function KarrierePage() {
       </section>
 
       <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="max-w-2xl">
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink/50">Offene Stellen</p>
+            <h2 className="mt-4 font-display text-[32px] leading-tight tracking-tight text-ink md:text-[44px]">
+              Zwei Gewerke, ein Team.
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-ink/70">
+              Wir suchen fuer beide Gewerke — Sie muessen sich nicht entscheiden, was
+              spannender klingt, sondern nur wo Ihre Erfahrung sitzt.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {trades.map((t) => (
+              <div key={t.key} className="rounded-2xl border border-ink/10 bg-white/60 p-8">
+                <div className={`mb-4 h-[3px] w-10 ${t.accent.bg}`} />
+                <h3 className="font-display text-[24px] leading-tight tracking-tight text-ink">
+                  {t.label}
+                </h3>
+                <ul className="mt-5 space-y-3">
+                  {t.careerRoles.map((role) => (
+                    <li key={role} className="flex items-start gap-3">
+                      <span className={`mt-[7px] block h-[6px] w-[6px] shrink-0 rotate-45 ${t.accent.bg}`} />
+                      <span className="text-[14px] leading-relaxed text-ink/80">{role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 md:pb-28">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid grid-cols-12 gap-x-10 gap-y-12">
             <div className="col-span-12 lg:col-span-5">

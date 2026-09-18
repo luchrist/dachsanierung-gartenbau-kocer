@@ -8,7 +8,7 @@ import { galabau } from "@/lib/galabau";
 const SECTION_LINKS = [
   { href: "/#leistungen", label: "Leistungen" },
   { href: "/#referenzen", label: "Referenzen" },
-  { href: "/#einsatzgebiet", label: "Einsatzgebiet" },
+  { href: "/#ablauf", label: "Ablauf" },
   { href: "/#stimmen", label: "Bewertungen" }
 ];
 
@@ -52,7 +52,7 @@ export function Navbar() {
           <img
             src="/assets/logo-mark.png"
             alt={`${company.name} Logo`}
-            className="h-16 w-16 object-contain transition-all duration-500 md:h-24 md:w-24"
+            className="h-10 w-auto object-contain transition-all duration-500 md:h-12"
           />
         </a>
 
@@ -78,7 +78,7 @@ export function Navbar() {
               solid ? "border-ink text-ink" : "border-bone/50 text-bone"
             }`}
           >
-            <span className="relative z-10 transition-colors group-hover:text-bone">Angebot anfragen</span>
+            <span className="relative z-10 transition-colors group-hover:text-bone">Projekt anfragen</span>
             <span className="relative z-10 transition-colors group-hover:text-bone">&rarr;</span>
             <span className="absolute inset-0 -z-0 origin-left scale-x-0 bg-laub-500 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" />
           </a>
@@ -129,7 +129,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-laub-500 px-6 py-4 text-[14px] font-medium text-bone"
             >
-              Angebot anfragen
+              Projekt anfragen
             </a>
             <a
               href={company.contact.phoneLink || "#"}
