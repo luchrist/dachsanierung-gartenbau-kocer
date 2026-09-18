@@ -50,15 +50,20 @@ export function TradeSections() {
             ))}
           </div>
 
-          {/* Dezenter Text-Link zum anderen Gewerk — Underline + Link-Icon. */}
-          <div className="mt-12 flex justify-end">
+          {/* Einladender Text-Link zum anderen Gewerk — mittig, dezent, Farbe
+              des anderen Gewerks. Kein Button-Look, sondern typografisch. */}
+          <div className="mt-16 flex flex-col items-center gap-2 text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/50">
+              Uebrigens
+            </p>
             <button
               type="button"
               onClick={() => setActive(other.key)}
-              className={`group inline-flex items-center gap-2 border-b border-current pb-1 font-mono text-[12px] uppercase tracking-[0.22em] ${other.accent.text} transition-opacity hover:opacity-70`}
+              style={{ color: other.accent.hex }}
+              className="group inline-flex items-center gap-3 border-b-2 border-current pb-1 font-display text-[22px] tracking-tight transition-opacity hover:opacity-80 md:text-[28px]"
             >
-              {other.label}-Leistungen sehen
-              <LinkIcon className="h-[14px] w-[14px] transition-transform group-hover:translate-x-[2px]" />
+              Zeigen Sie mir die {other.label}-Leistungen
+              <LinkIcon className="h-[18px] w-[18px] transition-transform group-hover:translate-x-[3px] md:h-[22px] md:w-[22px]" />
             </button>
           </div>
         </div>
@@ -103,7 +108,7 @@ export function TradeSections() {
         text={`Doch interessiert an ${other.label}?`}
         cta={`Zu ${other.label} wechseln`}
         onClick={() => setActive(other.key)}
-        color={other.accent.bg}
+        colorHex={other.accent.hex}
       />
 
       {/* Ablauf als Zeitstrahl — analog Arbeitsweise im GaLaBau-Template */}
@@ -186,18 +191,20 @@ function CrossTeaser({
   text,
   cta,
   onClick,
-  color,
+  colorHex,
 }: {
   text: string;
   cta: string;
   onClick: () => void;
-  color: string;
+  colorHex: string;
 }) {
   // Kompaktes, farbiges Band in der Akzentfarbe des anderen Gewerks. Wirkt als
   // klarer Divider zwischen zwei ansonsten benachbarten Sektionen und geht
-  // nicht in der Ink-Fläche der Referenzen unter.
+  // nicht in der Ink-Flaeche der Referenzen unter. Inline-Style, weil Tailwind
+  // die dynamisch aus der trades-Config gezogenen bg-[#...]-Klassen nicht
+  // zuverlaessig purgt.
   return (
-    <section className={`relative ${color} text-bone`}>
+    <section className="relative text-bone" style={{ backgroundColor: colorHex }}>
       <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10 md:py-12">
         <h2 className="font-display text-[24px] leading-tight tracking-tight md:text-[32px]">
           {text}

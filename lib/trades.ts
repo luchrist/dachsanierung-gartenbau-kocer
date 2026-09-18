@@ -30,6 +30,7 @@ export type Trade = {
     bg: string;
     text: string;
     border: string;
+    hex: string;
   };
   heroImage: string;
   splitClaim: string;
@@ -53,6 +54,7 @@ export const trades: Trade[] = [
       bg: "bg-[#8a3b2a]",
       text: "text-[#8a3b2a]",
       border: "border-[#8a3b2a]",
+      hex: "#8a3b2a",
     },
     heroImage: "/assets/kocer/walmdach1.webp",
     splitClaim: "Dachsanierung.",
@@ -154,6 +156,7 @@ export const trades: Trade[] = [
       bg: "bg-[#3f6b2a]",
       text: "text-[#3f6b2a]",
       border: "border-[#3f6b2a]",
+      hex: "#3f6b2a",
     },
     heroImage: "/assets/kocer/garten-hero.webp",
     splitClaim: "Gartenbau.",
