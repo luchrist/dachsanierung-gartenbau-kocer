@@ -50,19 +50,16 @@ export function TradeSections() {
             ))}
           </div>
 
-          {/* Einladender Text-Link zum anderen Gewerk — mittig, dezent, Farbe
-              des anderen Gewerks. Kein Button-Look, sondern typografisch. */}
-          <div className="mt-16 flex flex-col items-center gap-2 text-center">
-            <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/50">
-              Uebrigens
-            </p>
+          {/* Einladender Text-Link zum anderen Gewerk — mittig, dezent, in der
+              Farbe des anderen Gewerks. */}
+          <div className="mt-16 flex justify-center">
             <button
               type="button"
               onClick={() => setActive(other.key)}
               style={{ color: other.accent.hex }}
               className="group inline-flex items-center gap-3 border-b-2 border-current pb-1 font-display text-[22px] tracking-tight transition-opacity hover:opacity-80 md:text-[28px]"
             >
-              Zeigen Sie mir die {other.label}-Leistungen
+              {other.label}-Leistungen
               <LinkIcon className="h-[18px] w-[18px] transition-transform group-hover:translate-x-[3px] md:h-[22px] md:w-[22px]" />
             </button>
           </div>
