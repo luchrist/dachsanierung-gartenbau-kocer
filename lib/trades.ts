@@ -7,6 +7,7 @@ export type TradeKey = string;
 export type TradeService = {
   title: string;
   text: string;
+  image: string;
 };
 
 export type TradeReference = {
@@ -55,40 +56,46 @@ export const trades: Trade[] = [
     },
     heroImage: "/assets/kocer/walmdach1.webp",
     splitClaim: "Dachsanierung.",
-    expandedClaim: "Wir machen’s dicht.",
+    expandedClaim: "Ein Dach, das eine Generation hält.",
     expandedSubline:
-      "Das Dach gehört zu den am stärksten beanspruchten Bauteilen überhaupt. Ob Neubau oder Sanierung, Steildach oder Flachdach — wir planen und arbeiten so, dass Sie viele Jahre trocken darunter wohnen.",
+      "Das Dach gehört zu den am stärksten beanspruchten Bauteilen. Ob Neubau oder Sanierung, Steildach oder Flachdach — wir planen und arbeiten so, dass Sie viele Jahre trocken darunter wohnen.",
     splitBullets: ["Bedachungen", "Dämmung", "Klempnerarbeiten"],
     services: [
       {
         title: "Bedachungen",
         text:
           "Flachdach- und Steildachsanierung, Erstellung und Sanierung von Metalldächern — mit sauberem Unterbau und dauerhafter Regensicherheit.",
+        image: "/assets/kocer/tonziegel1.webp",
       },
       {
         title: "Dachfenster",
         text:
           "Dachfenster in allen Größen, sauber eingebaut und dicht angeschlossen. Ein Leben voller Lichtblicke — funktional wie stimmungsvoll.",
+        image: "/assets/kocer/fenster.webp",
       },
       {
         title: "Dachdämmung",
         text:
           "Aufsparren-, Zwischensparren- oder Untersparrendämmung, je nach Konstruktion und Nutzung. Auch als Dämmung der obersten Geschossdecke.",
+        image: "/assets/kocer/mineralwolle.webp",
       },
       {
         title: "Schornsteinverkleidung",
         text:
           "Ob Zink, Kupfer oder Schiefer — Verkleidung eines maroden Schornsteins, bevor teure Neuaufbauten nötig werden.",
+        image: "/assets/kocer/schornstein.webp",
       },
       {
         title: "Klempner- & Spenglerarbeiten",
         text:
           "First, Traufe, Ortgang, Dachrinnen und Fallrohre. Wir kümmern uns um alle Details für ein witterungsbeständiges Dach.",
+        image: "/assets/kocer/dachrinne1.webp",
       },
       {
         title: "Dachreparaturen",
         text:
           "Reparaturen aller Art, Reinigung von Dachrinnen, Fallrohren und Vordächern — damit Sie sicher unter Ihrem Dach wohnen.",
+        image: "/assets/kocer/vordach.webp",
       },
     ],
     references: [
@@ -126,9 +133,11 @@ export const trades: Trade[] = [
       },
     ],
     ablauf: [
-      { title: "Termin vor Ort", text: "Aufmaß, Zustandsprüfung und Klärung von Details wie Anschlüssen und Statik." },
-      { title: "Angebot", text: "Nachvollziehbare Positionen, klare Bauzeit, keine Überraschungen." },
-      { title: "Ausführung", text: "Ein Ansprechpartner, feste Baucrew, saubere Übergabe." },
+      { title: "Anfrage", text: "Sie schildern Ihr Vorhaben, grob reicht. Fotos vom Ist-Zustand sparen die erste Runde Rückfragen." },
+      { title: "Ortstermin & Aufmaß", text: "Wir sehen uns das Dach an, klären Zugang, Statik und Anschlüsse. Erst danach reden wir über Preise." },
+      { title: "Angebot", text: "Position für Position nachvollziehbar, mit Materialien und Mengen. Rückfragen sind ausdrücklich erwünscht." },
+      { title: "Ausführung", text: "Feste Bauzeit, ein Ansprechpartner, saubere Baustelle am Feierabend. Änderungen halten wir schriftlich fest." },
+      { title: "Übergabe", text: "Gemeinsame Abnahme mit allen Details wie Dachrinnen, Anschlüssen und Sicherheitsausstattung." },
     ],
     careerRoles: [
       "Dachdecker/in (m/w/d)",
@@ -148,40 +157,46 @@ export const trades: Trade[] = [
     },
     heroImage: "/assets/kocer/garten-hero.webp",
     splitClaim: "Gartenbau.",
-    expandedClaim: "Idyllische Gärten, mit Verstand angelegt.",
+    expandedClaim: "Ein Garten, den Sie jeden Tag genießen.",
     expandedSubline:
-      "Pflasterung, Terrasse, Vorgarten, Pflege und Baumarbeiten aus einer Hand. Wir gestalten Gärten so, dass Details noch nach zehn Jahren sitzen — und begleiten sie mit fachgerechter Pflege.",
+      "Pflaster, Terrasse, Vorgarten, Bepflanzung und Pflege aus einer Hand. Wir gestalten Gärten so, dass Details noch nach zehn Jahren sitzen — und begleiten sie mit fachgerechter Pflege.",
     splitBullets: ["Gartenpflege", "Pflaster & Terrasse", "Naturstein"],
     services: [
       {
         title: "Gartenpflege",
         text:
           "Rasenpflege, Baum- und Gehölzschnitt, Teichreinigung, Jahrespflege — fachgerecht und der Jahreszeit entsprechend.",
+        image: "/assets/kocer/hecke.webp",
       },
       {
         title: "Pflasterungen",
         text:
           "Wege, Auffahrten und Hofflächen mit dem passenden Material und fachgerechtem Unterbau.",
+        image: "/assets/kocer/pflaster1.webp",
       },
       {
         title: "Vorgärten",
         text:
           "Das Aushängeschild jedes Hauses — schön gestaltet und bepflanzt für einen einladenden Empfang.",
+        image: "/assets/kocer/vorgarten1.webp",
       },
       {
         title: "Natursteinarbeiten",
         text:
           "Natürliche Ästhetik im Garten: Trockenmauern, Findlinge, Treppenstufen, L-Steine.",
+        image: "/assets/kocer/naturstein.webp",
       },
       {
         title: "Terrassen",
         text:
           "Terrassen aus Hartholz oder hochwertigen Terrassenplatten — der ideale Platz für entspannte Stunden im Grünen.",
+        image: "/assets/kocer/terrassenbau.webp",
       },
       {
         title: "Baumfällungen & -pflege",
         text:
           "Fällungen schnell und sicher mit zertifizierter Seilklettertechnik. Baum- und Gehölzschnitt, Verpflanzungen.",
+        image: "/assets/kocer/baum1.webp",
       },
     ],
     references: [
@@ -219,9 +234,11 @@ export const trades: Trade[] = [
       },
     ],
     ablauf: [
-      { title: "Aufmaß vor Ort", text: "Bestand, Boden, Gefälle und Zugang klären." },
-      { title: "Planung & Angebot", text: "Varianten mit klaren Positionen statt einer Endsumme." },
-      { title: "Ausführung", text: "Feste Bauzeit, ein Team, Pflegehinweise inklusive." },
+      { title: "Anfrage", text: "Sie schildern Ihr Vorhaben, grob reicht. Fotos vom Ist-Zustand sparen die erste Runde Rückfragen." },
+      { title: "Ortstermin & Aufmaß", text: "Wir sehen uns die Fläche an, klären Zufahrt, Untergrund und Höhen. Erst danach reden wir über Preise." },
+      { title: "Angebot", text: "Position für Position nachvollziehbar, mit Materialien und Mengen. Rückfragen sind ausdrücklich erwünscht." },
+      { title: "Ausführung", text: "Feste Bauzeit, ein Ansprechpartner, sauberer Platz am Feierabend. Änderungen halten wir schriftlich fest." },
+      { title: "Übergabe & Pflege", text: "Gemeinsame Abnahme mit Einweisung in Bewässerung und Pflege. Auf Wunsch übernehmen wir sie dauerhaft." },
     ],
     careerRoles: [
       "Landschaftsgärtner/in (m/w/d)",
