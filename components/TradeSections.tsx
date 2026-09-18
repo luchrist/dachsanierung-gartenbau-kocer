@@ -167,23 +167,22 @@ function CrossTeaser({
   onClick: () => void;
   color: string;
 }) {
+  // Kompaktes, farbiges Band in der Akzentfarbe des anderen Gewerks. Wirkt als
+  // klarer Divider zwischen zwei ansonsten benachbarten Sektionen und geht
+  // nicht in der Ink-Fläche der Referenzen unter.
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-bone">
-      <div
-        aria-hidden
-        className={`absolute inset-0 opacity-[0.15] ${color}`}
-        style={{ mixBlendMode: "screen" }}
-      />
-      <div className="relative mx-auto flex max-w-[1400px] flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between md:px-10">
-        <h2 className="font-display text-[30px] leading-tight tracking-tight md:text-[42px]">
+    <section className={`relative ${color} text-bone`}>
+      <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10 md:py-12">
+        <h2 className="font-display text-[24px] leading-tight tracking-tight md:text-[32px]">
           {text}
         </h2>
         <button
           type="button"
           onClick={onClick}
-          className={`inline-flex items-center justify-center rounded-full ${color} px-7 py-4 text-[14px] font-medium tracking-wide text-bone transition-transform hover:brightness-110 active:scale-[0.98]`}
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-bone/60 bg-bone/10 px-6 py-3 text-[13px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98]"
         >
           {cta}
+          <span>&rarr;</span>
         </button>
       </div>
     </section>
