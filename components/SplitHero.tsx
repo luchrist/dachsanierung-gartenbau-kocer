@@ -90,18 +90,21 @@ export function SplitHero() {
           <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.28em] text-bone/70">
             Was interessiert Sie?
           </p>
-          <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+          {/* Grid statt Flex: jeder Button lebt in seiner Panel-Haelfte und
+              endet exakt vor der Mittellinie — der linke rechtsbuendig, der
+              rechte linksbuendig, mit sichtbarer Gap in der Mitte. */}
+          <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-8">
             <button
               type="button"
               onClick={() => setActive(left.key)}
-              className="inline-flex items-center justify-center rounded-full border border-bone/70 bg-bone/10 px-8 py-4 text-[14px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98]"
+              className="inline-flex items-center justify-center rounded-full border border-bone/70 bg-bone/10 px-8 py-4 text-[14px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98] sm:justify-self-end"
             >
               {left.label}
             </button>
             <button
               type="button"
               onClick={() => setActive(right.key)}
-              className="inline-flex items-center justify-center rounded-full border border-bone/70 bg-bone/10 px-8 py-4 text-[14px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98]"
+              className="inline-flex items-center justify-center rounded-full border border-bone/70 bg-bone/10 px-8 py-4 text-[14px] font-medium tracking-wide text-bone backdrop-blur-sm transition-all hover:bg-bone/25 active:scale-[0.98] sm:justify-self-start"
             >
               {right.label}
             </button>

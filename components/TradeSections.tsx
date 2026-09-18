@@ -49,15 +49,20 @@ export function TradeSections() {
               </article>
             ))}
           </div>
+
+          {/* Dezenter Text-Link zum anderen Gewerk — Underline + Link-Icon. */}
+          <div className="mt-12 flex justify-end">
+            <button
+              type="button"
+              onClick={() => setActive(other.key)}
+              className={`group inline-flex items-center gap-2 border-b border-current pb-1 font-mono text-[12px] uppercase tracking-[0.22em] ${other.accent.text} transition-opacity hover:opacity-70`}
+            >
+              {other.label}-Leistungen sehen
+              <LinkIcon className="h-[14px] w-[14px] transition-transform group-hover:translate-x-[2px]" />
+            </button>
+          </div>
         </div>
       </section>
-
-      <CrossTeaser
-        text={`Interessiert an ${other.label}?`}
-        cta={`Mehr zu ${other.label}`}
-        onClick={() => setActive(other.key)}
-        color={other.accent.bg}
-      />
 
       {/* Referenzen */}
       <section id="referenzen" className="bg-ink py-28 text-bone md:py-40">
@@ -93,6 +98,13 @@ export function TradeSections() {
           </div>
         </div>
       </section>
+
+      <CrossTeaser
+        text={`Doch interessiert an ${other.label}?`}
+        cta={`Zu ${other.label} wechseln`}
+        onClick={() => setActive(other.key)}
+        color={other.accent.bg}
+      />
 
       {/* Ablauf als Zeitstrahl — analog Arbeitsweise im GaLaBau-Template */}
       <section id="ablauf" className="relative bg-ink py-28 md:py-40 text-bone">
@@ -137,13 +149,27 @@ export function TradeSections() {
         </div>
       </section>
 
-      <CrossTeaser
-        text={`Vielleicht doch eher ${other.label}?`}
-        cta={`Zu ${other.label} wechseln`}
-        onClick={() => setActive(other.key)}
-        color={other.accent.bg}
-      />
     </>
+  );
+}
+
+function LinkIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M14 3h7v7" />
+      <path d="M10 14 21 3" />
+      <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+    </svg>
   );
 }
 
