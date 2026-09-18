@@ -3,27 +3,19 @@ export interface GalleryItem {
   alt: string;
 }
 
-// Curated for the gallery layout: a finished showcase first, followed by a
-// varied mix of work in progress, detail work and specialist services.
+// Kuratierte Galerie: eine ausgewogene Mischung aus Dach- und Gartenprojekten,
+// abwechselnd angeordnet, damit beide Gewerke sichtbar sind.
 export const galleryItems: GalleryItem[] = [
-  {
-    src: "/assets/leistungen/gewerbliche-aussenanlagen.webp",
-    alt: "Wohngebäude mit saniertem Dach und neu angelegter Außenanlage"
-  },
-  {
-    src: "/assets/leistungen/pflasterarbeiten-terrasse.webp",
-    alt: "Pflasterarbeiten mit großformatigen Platten auf tragfähigem Unterbau"
-  },
-  {
-    src: "/assets/leistungen/terrassenbau-grossformatplatten-01.webp",
-    alt: "Neu gebaute Terrasse mit sauberem Randabschluss und Übergang zum Rasen"
-  },
-  {
-    src: "/assets/leistungen/gartenpflege-heckenschnitt.webp",
-    alt: "Fachgerechter Heckenschnitt im Rahmen des Pflegevertrags"
-  },
-  {
-    src: "/assets/leistungen/terrassenbau-grossformatplatten-02.webp",
-    alt: "Detailaufnahme einer verlegten Platte mit sauberer Fuge"
-  }
+  { src: "/assets/kocer/gartenanlage1.webp", alt: "Neu angelegte Gartenanlage mit Wegen und Bepflanzung" },
+  { src: "/assets/kocer/walmdach1.webp", alt: "Saniertes Walmdach mit Tonziegeln" },
+  { src: "/assets/kocer/pergola.webp", alt: "Holzverkleidete Pergola auf einer neuen Terrasse" },
+  { src: "/assets/kocer/tonziegel1.webp", alt: "Neueindeckung mit Tonziegeln, saubere Firstlinie" },
+  { src: "/assets/kocer/vorgarten1.webp", alt: "Gepflegter Vorgarten mit Natursteinweg" },
+  { src: "/assets/kocer/schornstein.webp", alt: "Neu verkleideter Schornstein in Naturschiefer" },
+  { src: "/assets/kocer/terrassenbau.webp", alt: "Terrassenbau mit hochwertigen Platten" },
+  { src: "/assets/kocer/schiefer.webp", alt: "Schieferverkleidung, sauber verlegt" },
+  { src: "/assets/kocer/beet.webp", alt: "Frisch angelegte Beete mit Bepflanzung" },
+  { src: "/assets/kocer/dachrinne1.webp", alt: "Neue Dachrinne mit Fallrohr" },
+  { src: "/assets/kocer/rosenbeet.webp", alt: "Rosenbeet im Vorgartenbereich" },
+  { src: "/assets/kocer/vordach.webp", alt: "Neu gedecktes Vordach mit passendem Anschluss" }
 ];
